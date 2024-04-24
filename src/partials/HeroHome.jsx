@@ -1,15 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react';
-import Modal from '../utils/Modal';
-
-import HeroImage from '../images/hero-image-01.jpg';
-
+import React, { useState, useRef, useEffect } from "react";
+import Modal from "../utils/Modal";
+import svg from "../images/HeroIllustration.svg";
+import HeroImage from "../images/hero-image-01.jpg";
+import "../css/additional-styles/HeroSection.css";
 function HeroHome() {
-  const [videoModalOpen, setVideoModalOpen] = useState(false);
-  const video = useRef(null);
-
-  useEffect(() => {
-    videoModalOpen ? video.current.play() : video.current.pause();
-  }, [videoModalOpen]);    
+  const [demoModalOpen, setDemoModalOpen] = useState(false);
+  const [joinWaitlist, setJoinWaitlist] = useState(false);
 
   return (
     <section>
@@ -21,9 +17,23 @@ function HeroHome() {
           data-aos="fade-up"
           data-aos-delay="400"
         >
-          <svg className="max-w-full" width="564" height="552" viewBox="0 0 564 552" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            className="max-w-full"
+            width="564"
+            height="552"
+            viewBox="0 0 564 552"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <defs>
-              <linearGradient id="illustration-02" x1="-3.766" y1="300.204" x2="284.352" y2="577.921" gradientUnits="userSpaceOnUse">
+              <linearGradient
+                id="illustration-02"
+                x1="-3.766"
+                y1="300.204"
+                x2="284.352"
+                y2="577.921"
+                gradientUnits="userSpaceOnUse"
+              >
                 <stop stopColor="#5D5DFF" stopOpacity=".01" />
                 <stop offset="1" stopColor="#5D5DFF" stopOpacity=".32" />
               </linearGradient>
@@ -38,72 +48,289 @@ function HeroHome() {
         </div>
 
         {/* Hero content */}
-        <div className="relative pt-32 pb-10 md:pt-40 md:pb-16">
+        <div
+          className="relative pt-32 pb-10 md:pt-40 md:pb-16 pl-5 pr-5  heroImage"
+          style={{ display: "flex", alignItems: "center" }}
+        >
           {/* Section header */}
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
+          <div
+            className="max-w-3xl mx-auto text-center pb-12 md:pb-16"
+            style={{ textAlign: "left", width: "fit-content" }}
+          >
             <h1 className="h1 mb-4" data-aos="fade-up">
-              Landing template for startups
+              Revolutionize Your Restaurant's Ordering Experience with Dineeazy.
             </h1>
-            <p className="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">
-              Our landing page template works on all devices, so you only have to set it up once, and get beautiful results forever.
+            <p
+              className="text-xl text-gray-400 mb-8"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              Streamline Your Operations and Boost Your Sales with Our
+              Innovative Platform.
             </p>
-            <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
+            <div className="mx-auto sm:max-w-none sm:flex ">
               <div data-aos="fade-up" data-aos-delay="400">
-                <a className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0">
-                  Start free trial
+                <a
+                  className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setJoinWaitlist(true);
+                  }}
+                >
+                  Join Waitlist
                 </a>
+                {/* Modal */}
+                <Modal
+                  id="modal"
+                  ariaLabel="modal-headline"
+                  show={joinWaitlist}
+                  handleClose={() => setJoinWaitlist(false)}
+                >
+                  <div className="max-w-sm mx-auto p-10 border border-gray-300 rounded-md">
+                    <div className="flex items-center my-6">
+                      <div className="text-gray-400">
+                        Fill Below Details to join waitlist
+                      </div>
+                    </div>
+                    <form>
+                      <div className="flex flex-wrap -mx-3 mb-4">
+                        <div className="w-full px-3">
+                          <label
+                            className="block text-gray-300 text-sm font-medium mb-1"
+                            htmlFor="restaurant-name"
+                          >
+                            Restaurant Name{" "}
+                            <span className="text-red-600">*</span>
+                          </label>
+                          <input
+                            id="restaurant-name"
+                            type="text"
+                            className="form-input w-full text-gray-300"
+                            placeholder="Your Restaurant Name"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap -mx-3 mb-4">
+                        <div className="w-full px-3">
+                          <label
+                            className="block text-gray-300 text-sm font-medium mb-1"
+                            htmlFor="number"
+                          >
+                            Contact Number{" "}
+                            <span className="text-red-600">*</span>
+                          </label>
+                          <input
+                            id="number"
+                            type="number"
+                            className="form-input w-full text-gray-300"
+                            placeholder="Restaurant contact number"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap -mx-3 mb-4">
+                        <div className="w-full px-3">
+                          <label
+                            className="block text-gray-300 text-sm font-medium mb-1"
+                            htmlFor="email"
+                          >
+                            Contact Email{" "}
+                            <span className="text-red-600">*</span>
+                          </label>
+                          <input
+                            id="email"
+                            type="email"
+                            className="form-input w-full text-gray-300"
+                            placeholder="you@yourrestaurant.com"
+                            required
+                          />
+                        </div>
+                      </div>
+
+                      <div className="flex flex-wrap -mx-3 mt-6">
+                        <div className="w-full px-3">
+                          <button className="btn text-white bg-purple-600 hover:bg-purple-700 w-full">
+                            Join
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </Modal>
               </div>
               <div data-aos="fade-up" data-aos-delay="600">
-                <a className="btn text-white bg-gray-700 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="#0">
-                  Learn more
+                <a
+                  className="btn text-white bg-gray-700 hover:bg-gray-800 w-full sm:w-auto sm:ml-4"
+                  href="#0"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setDemoModalOpen(true);
+                  }}
+                  aria-controls="modal"
+                >
+                  Register for Demo
                 </a>
+
+                {/* Modal */}
+                <Modal
+                  id="modal"
+                  ariaLabel="modal-headline"
+                  show={demoModalOpen}
+                  handleClose={() => setDemoModalOpen(false)}
+                >
+                  <div className="max-w-sm mx-auto p-10 border border-gray-300 rounded-md">
+                    <div className="flex items-center my-6">
+                      <div className="text-gray-400">
+                        Fill Below Details for on premise demonstration
+                      </div>
+                    </div>
+                    <form>
+                      <div className="flex flex-wrap -mx-3 mb-4">
+                        <div className="w-full px-3">
+                          <label
+                            className="block text-gray-300 text-sm font-medium mb-1"
+                            htmlFor="full-name"
+                          >
+                            Full Name <span className="text-red-600">*</span>
+                          </label>
+                          <input
+                            id="full-name"
+                            type="text"
+                            className="form-input w-full text-gray-300"
+                            placeholder="Restaurant Manager/Contact person name"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap -mx-3 mb-4">
+                        <div className="w-full px-3">
+                          <label
+                            className="block text-gray-300 text-sm font-medium mb-1"
+                            htmlFor="company-name"
+                          >
+                            Restaurant Name{" "}
+                            <span className="text-red-600">*</span>
+                          </label>
+                          <input
+                            id="company-name"
+                            type="text"
+                            className="form-input w-full text-gray-300"
+                            placeholder="Your Restaurant name"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap -mx-3 mb-4">
+                        <div className="w-full px-3">
+                          <label
+                            className="block text-gray-300 text-sm font-medium mb-1"
+                            htmlFor="number"
+                          >
+                            Contact Number{" "}
+                            <span className="text-red-600">*</span>
+                          </label>
+                          <input
+                            id="number"
+                            type="number"
+                            className="form-input w-full text-gray-300"
+                            placeholder="Restaurant contact number"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap -mx-3 mb-4">
+                        <div className="w-full px-3">
+                          <label
+                            className="block text-gray-300 text-sm font-medium mb-1"
+                            htmlFor="email"
+                          >
+                            Contact Email{" "}
+                            <span className="text-red-600">*</span>
+                          </label>
+                          <input
+                            id="email"
+                            type="email"
+                            className="form-input w-full text-gray-300"
+                            placeholder="you@yourrestaurant.com"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap -mx-3 mb-4">
+                        <div className="w-full px-3">
+                          <label
+                            className="block text-gray-300 text-sm font-medium mb-1"
+                            htmlFor="full-name"
+                          >
+                            Restaurant Complete Address{" "}
+                            <span className="text-red-600">*</span>
+                          </label>
+                          <input
+                            id="address"
+                            type="text"
+                            className="form-input w-full text-gray-300"
+                            placeholder="Restaurant Address"
+                            required
+                          />
+                        </div>
+                      </div>
+
+                      <div className="flex flex-wrap -mx-3 mt-6">
+                        <div className="w-full px-3">
+                          <button className="btn text-white bg-purple-600 hover:bg-purple-700 w-full">
+                            Book Demonstration
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </Modal>
               </div>
             </div>
           </div>
 
           {/* Hero image */}
           <div>
-            <div className="relative flex justify-center items-center" data-aos="fade-up" data-aos-delay="200">
-              <img className="mx-auto" src={HeroImage} width="1024" height="504" alt="Hero" />
-              <a
-                className="absolute group"
-                href="#0"
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  setVideoModalOpen(true);
-                }}
-                aria-controls="modal"
-              >
-                <svg
-                  className="w-16 h-16 sm:w-20 sm:h-20 hover:opacity-75 transition duration-150 ease-in-out"
-                  viewBox="0 0 88 88"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <defs>
-                    <linearGradient x1="78.169%" y1="9.507%" x2="24.434%" y2="90.469%" id="a">
-                      <stop stopColor="#EBF1F5" stopOpacity=".8" offset="0%" />
-                      <stop stopColor="#EBF1F5" offset="100%" />
-                    </linearGradient>
-                  </defs>
-                  <circle fill="url(#a)" cx="44" cy="44" r="44" />
-                  <path
-                    className="fill-current text-purple-600"
-                    d="M52 44a.999.999 0 00-.427-.82l-10-7A1 1 0 0040 37V51a.999.999 0 001.573.82l10-7A.995.995 0 0052 44V44c0 .001 0 .001 0 0z"
-                  />
-                </svg>
-              </a>
-            </div>
+            <div
+              className="relative flex justify-center items-center"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <img
+                className="mx-auto"
+                src={svg}
+                width="800"
+                height="504"
+                alt="Hero"
+              />
 
-            {/* Modal */}
-            <Modal id="modal" ariaLabel="modal-headline" show={videoModalOpen} handleClose={() => setVideoModalOpen(false)}>
-              <div className="relative pb-9/16">
-                <video ref={video} className="absolute w-full h-full" width="1920" height="1080" loop autoPlay controls>
-                  <source src="/videos/video.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </Modal>
+              <svg
+                className="w-16 h-16 sm:w-20 sm:h-20 hover:opacity-75 transition duration-150 ease-in-out"
+                viewBox="0 0 88 88"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <linearGradient
+                    x1="78.169%"
+                    y1="9.507%"
+                    x2="24.434%"
+                    y2="90.469%"
+                    id="a"
+                  >
+                    <stop stopColor="#EBF1F5" stopOpacity=".8" offset="0%" />
+                    <stop stopColor="#EBF1F5" offset="100%" />
+                  </linearGradient>
+                </defs>
+                <circle fill="url(#a)" cx="44" cy="44" r="44" />
+                <path
+                  className="fill-current text-purple-600"
+                  d="M52 44a.999.999 0 00-.427-.82l-10-7A1 1 0 0040 37V51a.999.999 0 001.573.82l10-7A.995.995 0 0052 44V44c0 .001 0 .001 0 0z"
+                />
+              </svg>
+            </div>
           </div>
         </div>
       </div>

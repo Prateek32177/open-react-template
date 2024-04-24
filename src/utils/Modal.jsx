@@ -63,7 +63,7 @@ function Modal({
         leaveStart="opacity-100 scale-100"
         leaveEnd="opacity-0 scale-95"
       >
-        <div className="bg-white overflow-auto max-w-6xl w-full max-h-full" ref={modalContent}>          
+        <div className="bg-black overflow-auto max-w-3xl " ref={modalContent}>          
           {children}
         </div>
       </Transition>    

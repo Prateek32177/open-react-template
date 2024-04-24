@@ -20,71 +20,57 @@ function Footer() {
                   </svg>
                 </Link>
               </div>
-              <div className="text-gray-400">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</div>
+              <div className="text-gray-400">Power Your Restaurant today with DineEazy and provide a Fine Dinning Experience to Customers and ensure good growth.</div>
             </div>
 
             {/* 2nd, 3rd and 4th blocks */}
             <div className="md:col-span-8 lg:col-span-7 grid sm:grid-cols-3 gap-8">
 
               {/* 2nd block */}
-              <div className="text-sm">
+              {/* <div className="text-sm">
                 <h6 className="text-gray-200 font-medium mb-1">Products</h6>
                 <ul>
                   <li className="mb-1">
-                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Web Studio</Link>
+                    <Link to="https://flowaii.web.app/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">TextlyAI</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">DynamicBox Flex</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Programming Forms</Link>
+                    <Link to="https://deazy-52098.web.app/" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">DineEazy Demo App</Link>
                   </li>
                 </ul>
-              </div>
+              </div> */}
 
               {/* 3rd block */}
-              <div className="text-sm">
+              {/* <div className="text-sm">
                 <h6 className="text-gray-200 font-medium mb-1">Resources</h6>
                 <ul>
                   <li className="mb-1">
-                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Nostrud exercitation</Link>
+                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Onboarding Guide</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Visual mockups</Link>
+                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Onboarding Help Contact</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Nostrud exercitation</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Visual mockups</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Nostrud exercitation</Link>
+                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Pricing</Link>
                   </li>
                 </ul>
-              </div>
+              </div> */}
 
               {/* 4th block */}
-              <div className="text-sm">
+              {/* <div className="text-sm">
                 <h6 className="text-gray-200 font-medium mb-1">Company</h6>
                 <ul>
                   <li className="mb-1">
-                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Consectetur adipiscing</Link>
+                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">About Us</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Labore et dolore</Link>
+                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Contact Us</Link>
                   </li>
                   <li className="mb-1">
-                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Consectetur adipiscing</Link>
+                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Privacy Policy</Link>
                   </li>
-                  <li className="mb-1">
-                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Labore et dolore</Link>
-                  </li>
-                  <li className="mb-1">
-                    <Link to="#" className="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Consectetur adipiscing</Link>
-                  </li>
+                 
                 </ul>
-              </div>
+              </div> */}
 
             </div>
 
@@ -102,7 +88,7 @@ function Footer() {
                   </svg>
                 </Link>
               </li>
-              <li className="ml-4">
+              {/* <li className="ml-4">
                 <Link to="#" className="flex justify-center items-center text-purple-600 bg-gray-800 hover:text-gray-100 hover:bg-purple-600 rounded-full transition duration-150 ease-in-out" aria-label="Github">
                   <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                     <path d="M16 8.2c-4.4 0-8 3.6-8 8 0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4V22c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.3 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6-.2 1.3-.3 2-.3s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.4.6.9.6 1.6v2.2c0 .2.1.5.6.4 3.2-1.1 5.5-4.1 5.5-7.6-.1-4.4-3.7-8-8.1-8z" />
@@ -115,7 +101,7 @@ function Footer() {
                     <path d="M14.023 24L14 17h-3v-3h3v-2c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V14H21l-1 3h-2.72v7h-3.257z" />
                   </svg>
                 </Link>
-              </li>
+              </li> */}
               <li className="ml-4">
                 <Link to="#" className="flex justify-center items-center text-purple-600 bg-gray-800 hover:text-gray-100 hover:bg-purple-600 rounded-full transition duration-150 ease-in-out" aria-label="Instagram">
                   <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -135,7 +121,7 @@ function Footer() {
             </ul>
 
             {/* Copyrights note */}
-            <div className="text-gray-400 text-sm mr-4">&copy; Cruip.com. All rights reserved.</div>
+            <div className="text-gray-400 text-sm mr-4">&copy; DineEazy. All rights reserved.</div>
 
           </div>
 
